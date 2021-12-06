@@ -42,7 +42,7 @@ DEBUG := 0
 DESTDIR :=
 
 # This is the prefix that will be used for almost all directories below.
-PREFIX := /usr/local
+PREFIX := /usr
 
 # Your C compiler
 CC := gcc
@@ -53,7 +53,7 @@ ETCDIR := /etc
 
 # You should not need to change this. It is the directory into which the
 # library files (both static and shared) will be installed.
-LIBDIR := $(PREFIX)/lib
+LIBDIR := $(PREFIX)/lib64
 
 EXLDFLAGS := -Wl,-rpath,$(LIBDIR)
 
@@ -141,7 +141,7 @@ ifeq ($(DEBUG),1)
 ALL_CPPFLAGS += -DDEBUG
 ALL_CFLAGS += -O -g
 else
-ALL_CFLAGS += -O2
+ALL_CFLAGS += -O3
 endif
 
 ifeq ($(WARN),1)
